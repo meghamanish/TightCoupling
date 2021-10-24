@@ -23,10 +23,10 @@ namespace PeopleViewer
 	{
 
 		PeopleViewModel viewModel;
-		public MainWindow()
+		public MainWindow(PeopleViewModel model)
 		{
 			InitializeComponent();
-			viewModel = new PeopleViewModel();
+			viewModel = model;
 			this.DataContext = viewModel;
 		}
 

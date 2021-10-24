@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using PeopleViewer.Common;
-using PersonDataReader.Service;
 
 namespace PeopleViewer.Presentation
 {
 	public class PeopleViewModel : INotifyPropertyChanged
 	{
-		protected ServiceReader DataReader;
+		protected IPersonReader DataReader;
 
 		private IEnumerable<Person> _people;
 
@@ -25,9 +24,9 @@ namespace PeopleViewer.Presentation
 			}
 		}
 
-		public PeopleViewModel()
+		public PeopleViewModel(IPersonReader dataReader)
 		{
-			DataReader = new ServiceReader();
+			DataReader = dataReader;
 		}
 
 		public void RefreshPeople()

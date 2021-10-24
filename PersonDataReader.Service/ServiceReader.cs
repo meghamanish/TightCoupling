@@ -6,7 +6,7 @@ using PeopleViewer.Common;
 
 namespace PersonDataReader.Service
 {
-	public class ServiceReader
+	public class ServiceReader : IPersonReader
 	{
 		WebClient client = new WebClient();
 		string baseUri = "http://localhost:9874/people";
